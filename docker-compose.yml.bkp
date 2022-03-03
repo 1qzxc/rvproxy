@@ -1,0 +1,35 @@
+version: "2"
+
+services:
+  nginx:
+    build: ./
+    image: morozovme/nginx
+#    env_file:
+#      - ./config.env
+    volumes:
+      - morozovme_nginx_ssl:/etc/nginx/ssl
+      - morozovme_certbot_certs:/etc/letsencrypt
+      - morozovme_com_certbot:/var/www/certbot/morozovme.com
+      - ./html:/var/www/html/morozovme.com
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
+
+  certbot:
+    build: ./certbot
+    image: morozovme/certbot
+#    env_file:
+#      - ./config.env
+    volumes:
+      - morozovme_certbot_certs:/etc/letsencrypt
+      - morozovme_com_certbot:/var/www/certbot/morozovme.com
+    depends_on:
+      - nginx
+
+volumes:
+  morozovme_nginx_ssl:
+    external: true
+  morozovme_certbot_certs:
+    external: true
+  morozovme_com_certbot:
