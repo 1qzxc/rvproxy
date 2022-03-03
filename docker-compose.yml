@@ -2,15 +2,14 @@ version: "2"
 
 services:
   nginx:
-    build: ./nginx
+    build: ./
     image: morozovme/nginx
-    env_file:
-      - ./config.env
+#    env_file:
+#      - ./config.env
     volumes:
       - morozovme_nginx_ssl:/etc/nginx/ssl
       - morozovme_certbot_certs:/etc/letsencrypt
-      - test1_devcomanda_com_certbot:/var/www/certbot/test1.devcomanda.com
-      - test2_devcomanda_com_certbot:/var/www/certbot/test2.devcomanda.com
+      - morozovme_com_certbot:/var/www/certbot/morozovme.com
       - ./html:/var/www/html/morozovme.com
     ports:
       - "80:80"
@@ -19,31 +18,18 @@ services:
 
   certbot:
     build: ./certbot
-    image: devcomanda/certbot
-    env_file:
-      - ./config.env
+    image: morozovme/certbot
+#    env_file:
+#      - ./config.env
     volumes:
-      - devcomanda_certbot_certs:/etc/letsencrypt
-      - test1_devcomanda_com_certbot:/var/www/certbot/morozovme.com
+      - morozovme_certbot_certs:/etc/letsencrypt
+      - morozovme_com_certbot:/var/www/certbot/morozovme.com
     depends_on:
       - nginx
-
-  cron:
-    build: ./cron
-    image: devcomanda/cron
-    environment:
-      COMPOSE_PROJECT_NAME: "${COMPOSE_PROJECT_NAME}"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./:/workdir:ro
-    depends_on:
-      - nginx
-      - certbot
 
 volumes:
-  devcomanda_nginx_ssl:
+  morozovme_nginx_ssl:
     external: true
-  devcomanda_certbot_certs:
+  morozovme_certbot_certs:
     external: true
-  test1_devcomanda_com_certbot:
-  test2_devcomanda_com_certbot:
+  morozovme_com_certbot:
