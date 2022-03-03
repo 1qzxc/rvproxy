@@ -19,5 +19,5 @@ COPY nginx.conf /etc/nginx/sites-available/default
 CMD ["nginx"]
 
 # Expose ports.
-EXPOSE 80
+EXPOSE 80 443
 
