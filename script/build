@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e 
 
-sudo docker stop $(sudo docker ps -q --filter ancestor=mikefrostov/rvproxy )
-sudo docker rm $(sudo docker ps --all -q --filter ancestor=mikefrostov/rvproxy )
-sudo docker build -t mikefrostov/rvproxy . 
-sudo docker run -d -p 80:80 mikefrostov/rvproxy
+sudo docker stop $(sudo docker ps -q --filter ancestor=morozovme/rvproxy )
+sudo docker rm $(sudo docker ps --all -q --filter ancestor=morozovme/rvproxy )
+sudo docker build -t morozovme/rvproxy . 
+sudo docker run -d -p 80:80 morozovme/rvproxy
