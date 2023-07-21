@@ -2,7 +2,7 @@ server {
         listen 80;
         server_name     morozovme.com www.morozovme.com;
         location / {
-                proxy_pass http://192.168.1.88:8084;
+                proxy_pass http://192.168.1.9:8084;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -19,7 +19,7 @@ server {
         listen 80;
         server_name     media.morozovme.com www.media.morozovme.com;
         location / {
-                proxy_pass http://192.168.1.88:1338;
+                proxy_pass http://192.168.1.9:1338;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -36,7 +36,7 @@ server {
         listen 80;
         server_name     media.mikefrostov.io www.media.mikefrostov.io;
         location / {
-                proxy_pass http://192.168.1.88:1337;
+                proxy_pass http://192.168.1.9:1337;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -53,7 +53,7 @@ server {
         listen 80;
         server_name     media.mikefrostov.com www.media.mikefrostov.com;
         location / {
-                proxy_pass http://192.168.1.88:1337;
+                proxy_pass http://192.168.1.9:1337;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -106,7 +106,7 @@ server {
         listen 80;
         server_name     mikefrostov.io www.mikefrostov.io;
         location / {
-                proxy_pass http://192.168.1.88:8089;
+                proxy_pass http://192.168.1.9:8089;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -124,7 +124,7 @@ server {
         listen 80;
         server_name     mikefrostov.com www.mikefrostov.com;
         location / {
-                proxy_pass http://192.168.1.88:8089;
+                proxy_pass http://192.168.1.9:8089;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -141,7 +141,7 @@ server {
         listen 80;
         server_name     koareact2.morozovme.com www.koareact2.morozovme.com;
         location / {
-                proxy_pass http://192.168.1.88:3001;
+                proxy_pass http://192.168.1.9:3001;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -160,7 +160,7 @@ server {
         listen 80;
         server_name     oroneon.morozovme.com www.oroneon.morozovme.com;
         location / {
-                proxy_pass http://192.168.1.88:8086;
+                proxy_pass http://192.168.1.9:8086;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -177,7 +177,7 @@ server {
         listen 80;
         server_name     flaskr.morozovme.com www.flaskr.morozovme.com;
         location / {
-                proxy_pass http://192.168.1.88:8087;
+                proxy_pass http://192.168.1.9:8087;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -194,7 +194,7 @@ server {
         listen 80;
         server_name     koareact.morozovme.com www.koareact.morozovme.com;
         location / {
-                proxy_pass http://192.168.1.88:3000;
+                proxy_pass http://192.168.1.9:3000;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -214,7 +214,7 @@ server {
         listen 80;
         server_name     jenkins.morozovme.com www.jenkins.morozovme.com;
         location / {
-                proxy_pass http://192.168.1.88:8080;
+                proxy_pass http://192.168.1.9:8080;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -231,7 +231,7 @@ server {
         server_name     blog.morozovme.com www.blog.morozovme.com;
 
         location / {
-                proxy_pass http://192.168.1.88:8090;
+                proxy_pass http://192.168.1.9:8090;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -248,7 +248,7 @@ server {
         server_name     sitik.morozovme.com www.sitik.morozovme.com;
 
         location / {
-                proxy_pass http://192.168.1.88:8082;
+                proxy_pass http://192.168.1.9:8082;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -265,7 +265,7 @@ server {
         server_name     grafana.morozovme.com www.grafana.morozovme.com;
 
         location / {
-                proxy_pass http://192.168.1.88:3030;
+                proxy_pass http://192.168.1.9:3030;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -282,7 +282,7 @@ server {
         listen 80;
         server_name     koareact3.morozovme.com www.koareact3.morozovme.com;
         location / {
-                proxy_pass http://192.168.1.88:4001;
+                proxy_pass http://192.168.1.9:4001;
                 proxy_set_header Host $host;
                 proxy_set_header X-Real-IP $remote_addr;
                 proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
