@@ -13,7 +13,11 @@ RUN \
   chown -R www-data:www-data /var/lib/nginx
 
 RUN rm /etc/nginx/sites-available/default
-COPY nginx.conf /etc/nginx/sites-available/default
+COPY default /etc/nginx/sites-available/default
+
+RUN rm /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
+RUN echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 
 # Define default command.
 CMD ["nginx"]

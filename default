@@ -1,0 +1,316 @@
+server {
+        listen 80;
+        server_name     morozovme.com www.morozovme.com;
+        location / {
+                proxy_pass http://192.168.1.88:8084;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 700m;
+                client_body_buffer_size 128k;
+        }
+}
+
+server {
+        listen 80;
+        server_name     media.morozovme.com www.media.morozovme.com;
+        location / {
+                proxy_pass http://192.168.1.88:1338;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 700m;
+                client_body_buffer_size 128k;
+        }
+}
+
+server {
+        listen 80;
+        server_name     media.mikefrostov.io www.media.mikefrostov.io;
+        location / {
+                proxy_pass http://192.168.1.88:1337;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 700m;
+                client_body_buffer_size 128k;
+        }
+}
+
+server {
+        listen 80;
+        server_name     media.mikefrostov.com www.media.mikefrostov.com;
+        location / {
+                proxy_pass http://192.168.1.88:1337;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 700m;
+                client_body_buffer_size 128k;
+        }
+}
+
+server {
+        listen 80;
+        server_name     gitlab.morozovme.com www.gitlab.morozovme.com;
+        location / {
+                proxy_pass http://192.168.1.47:80;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 100m;
+                client_body_buffer_size 128k;
+        }
+}
+
+server {
+        listen 443;
+        server_name     gitlab.morozovme.com www.gitlab.morozovme.com;
+        location / {
+                proxy_pass https://192.168.1.47:443;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 100m;
+                client_body_buffer_size 128k;
+        }
+}
+
+
+
+server {
+        listen 80;
+        server_name     mikefrostov.io www.mikefrostov.io;
+        location / {
+                proxy_pass http://192.168.1.88:8089;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 700m;
+                client_body_buffer_size 128k;
+        }
+}
+
+
+server {
+        listen 80;
+        server_name     mikefrostov.com www.mikefrostov.com;
+        location / {
+                proxy_pass http://192.168.1.88:8089;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 700m;
+                client_body_buffer_size 128k;
+        }
+}
+
+server {
+        listen 80;
+        server_name     koareact2.morozovme.com www.koareact2.morozovme.com;
+        location / {
+                proxy_pass http://192.168.1.88:3001;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 8m;
+                client_body_buffer_size 128k;
+        }
+}
+
+
+
+server {
+        listen 80;
+        server_name     oroneon.morozovme.com www.oroneon.morozovme.com;
+        location / {
+                proxy_pass http://192.168.1.88:8086;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 8m;
+                client_body_buffer_size 128k;
+        }
+}
+
+server {
+        listen 80;
+        server_name     flaskr.morozovme.com www.flaskr.morozovme.com;
+        location / {
+                proxy_pass http://192.168.1.88:8087;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 8m;
+                client_body_buffer_size 128k;
+        }
+}
+
+server {
+        listen 80;
+        server_name     koareact.morozovme.com www.koareact.morozovme.com;
+        location / {
+                proxy_pass http://192.168.1.88:3000;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 8m;
+                client_body_buffer_size 128k;
+        }
+}
+
+
+
+
+server {
+        listen 80;
+        server_name     jenkins.morozovme.com www.jenkins.morozovme.com;
+        location / {
+                proxy_pass http://192.168.1.88:8080;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 8m;
+                client_body_buffer_size 128k;
+        }
+}
+server {
+        listen 80;
+        server_name     blog.morozovme.com www.blog.morozovme.com;
+
+        location / {
+                proxy_pass http://192.168.1.88:8090;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 8m;
+                client_body_buffer_size 128k;
+        }
+}
+server {
+        listen 80;
+        server_name     sitik.morozovme.com www.sitik.morozovme.com;
+
+        location / {
+                proxy_pass http://192.168.1.88:8082;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 8m;
+                client_body_buffer_size 128k;
+        }
+}
+server {
+        listen 80;
+        server_name     grafana.morozovme.com www.grafana.morozovme.com;
+
+        location / {
+                proxy_pass http://192.168.1.88:3030;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 8m;
+                client_body_buffer_size 128k;
+        }
+}
+
+server {
+        listen 80;
+        server_name     koareact3.morozovme.com www.koareact3.morozovme.com;
+        location / {
+                proxy_pass http://192.168.1.88:4001;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 8m;
+                client_body_buffer_size 128k;
+        }
+}
+
+server {
+        listen 80;
+        server_name     koareact4.morozovme.com www.koareact4.morozovme.com;
+        location / {
+                proxy_pass http://192.168.1.49:4001;
+                proxy_http_version 1.1;
+                proxy_set_header Host $host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "Upgrade";
+                proxy_connect_timeout 150;
+                proxy_send_timeout 100;
+                proxy_read_timeout 100;
+                proxy_buffers 4 32k;
+                client_max_body_size 8m;
+                client_body_buffer_size 128k;
+        }
+}
